@@ -10,7 +10,7 @@ var RSI = require('technicalindicators').RSI;
 
 
 function getRSI(inputRSI) {
-  let rsi= RSI.calculate(inputRSI);
+  let rsi = RSI.calculate(inputRSI);
   console.log(rsi);
   return rsi;
 }
@@ -25,13 +25,8 @@ function getCandles(symbol) {
             closePriceArray.push(Number(ticks[i][4]));
           }
         }
-        console.log({closePriceArray});
-        let rsi = getRSI({
-          values: closePriceArray,
-          period: 14
-        });
-        console.log({rsi});
-        resolve(rsi);
+        console.log({ rsi });
+        resolve(closePriceArray);
       }, { limit: 15, endTime: +new Date() });
     } catch (error) {
       reject(error);
@@ -40,4 +35,11 @@ function getCandles(symbol) {
   });
 }
 
-getCandles("BTCUSDT");
+const candles = getCandles("BTCUSDT");
+
+let rsi = {
+  values: candles,
+  period: 14
+};
+
+getRSI(rsi);
