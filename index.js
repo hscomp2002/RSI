@@ -10,7 +10,9 @@ var RSI = require('technicalindicators').RSI;
 
 
 function getRSI(inputRSI) {
-  return RSI.calculate(inputRSI);
+  let rsi= RSI.calculate(inputRSI);
+  console.log(rsi);
+  return rsi;
 }
 
 function getCandles(symbol) {
