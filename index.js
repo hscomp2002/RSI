@@ -23,6 +23,7 @@ function getCandles(symbol) {
             closePriceArray.push(Number(ticks[i][4]));
           }
         }
+        console.log({closePriceArray});
         let rsi = getRSI({
           values: closePriceArray,
           period: 14
