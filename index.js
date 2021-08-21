@@ -42,4 +42,6 @@ let rsi = {
   period: 14
 };
 
-getRSI(rsi);
+console.log(rsi);
+
+//getRSI(rsi);
