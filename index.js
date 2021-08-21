@@ -10,6 +10,7 @@ var RSI = require('technicalindicators').RSI;
 
 
 function getRSI(inputRSI) {
+  console.log({inputRSI});
   let rsi = RSI.calculate(inputRSI);
   console.log(rsi);
   return rsi;
@@ -41,7 +42,7 @@ async function main() {
     period: 14
   };
 
-  console.log(getRSI(rsi));
+  getRSI(rsi);
 }
 
 
