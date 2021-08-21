@@ -25,7 +25,6 @@ function getCandles(symbol) {
             closePriceArray.push(Number(ticks[i][4]));
           }
         }
-        console.log({ rsi });
         resolve(closePriceArray);
       }, { limit: 15, endTime: +new Date() });
     } catch (error) {
