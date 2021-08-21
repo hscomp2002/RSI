@@ -34,14 +34,16 @@ function getCandles(symbol) {
 
   });
 }
+async function main() {
+  const candles = await getCandles("BTCUSDT");
 
-const candles = getCandles("BTCUSDT");
+  let rsi = {
+    values: candles,
+    period: 14
+  };
 
-let rsi = {
-  values: candles,
-  period: 14
-};
+  console.log(rsi);
+}
 
-console.log(rsi);
 
-//getRSI(rsi);
+main();
