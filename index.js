@@ -41,7 +41,7 @@ async function main() {
     period: 14
   };
 
-  console.log(rsi);
+  console.log(getRSI(rsi));
 }
 
 
