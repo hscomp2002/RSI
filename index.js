@@ -36,3 +36,5 @@ function getCandles(symbol) {
 
   });
 }
+
+getCandles("BTCUSDT");
