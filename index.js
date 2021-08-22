@@ -27,7 +27,7 @@ function getCandles(symbol) {
           }
         }
         resolve(closePriceArray);
-      }, { limit: 41, endTime: +new Date() });
+      }, { limit: 500, endTime: +new Date() });
     } catch (error) {
       reject(error);
     }
