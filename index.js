@@ -27,7 +27,7 @@ function getCandles(symbol) {
           }
         }
         resolve(closePriceArray);
-      }, { limit: 15, endTime: +new Date() });
+      }, { limit: 23, endTime: +new Date() });
     } catch (error) {
       reject(error);
     }
@@ -46,21 +46,21 @@ async function main() {
 }
 
 
-//main();
+main();
 
-var inputRSI = {
-  values : [43794.37,  46253.4,
-    45584.99,    45511,
-       44399,    47800,
-    47068.51, 46973.82,
-    45901.29, 44695.95,
-    44705.29, 46760.62,
-    49322.47, 48821.87],
-  period : 14
-};
-var expectedResult = [
-    86.41,86.43,89.65,86.50,84.96,80.54,77.56,58.06
-];
+// var inputRSI = {
+//   values : [43794.37,  46253.4,
+//     45584.99,    45511,
+//        44399,    47800,
+//     47068.51, 46973.82,
+//     45901.29, 44695.95,
+//     44705.29, 46760.62,
+//     49322.47, 48821.87],
+//   period : 14
+// };
+// var expectedResult = [
+//     86.41,86.43,89.65,86.50,84.96,80.54,77.56,58.06
+// ];
 
-let a= RSI.calculate(inputRSI);
-console.log(a);
+// let a= RSI.calculate(inputRSI);
+// console.log(a);
