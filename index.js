@@ -12,8 +12,7 @@ var RSI = require('technicalindicators').RSI;
 function getRSI(inputRSI) {
   console.log({inputRSI});
   let rsi = RSI.calculate(inputRSI);
-  console.info(rsi.slice(rsi.length-10,rsi.length));
-  return rsi;
+  return rsi.pop();
 }
 
 function getCandles(symbol) {
@@ -37,12 +36,13 @@ function getCandles(symbol) {
 async function main() {
   const candles = await getCandles("BTCUSDT");
 
-  let rsi = {
+  let rsiData = {
     values: candles,
     period: 14
   };
 
-  getRSI(rsi);
+  const rsi =  getRSI(rsiData);
+  console.log({rsi});
 }
 
 
